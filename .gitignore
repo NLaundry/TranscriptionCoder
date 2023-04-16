@@ -1,0 +1,36 @@
+# .gitignore
+
+# Ignore virtual environment directories
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc.pytest_cache/
+*.egg-info/
+dist/
+build/
+env/
+venv/
+.virtualenv/
+.virtualenvs/
+.poetry/
+
+# Ignore cache files and logs
+*.log
+*.bak
+*.swp
+*.swo
+*.swn
+*.cache
+*.sqlite
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.tm_properties
+
+# Ignore macOS system files
+.DS_Store
+._*
