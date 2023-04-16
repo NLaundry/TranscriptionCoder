@@ -1,5 +1,6 @@
 import click
 import openai
+from .audio_processor import AudioProcessor
 
 @click.group()
 def cli():
@@ -16,6 +17,17 @@ def setup(api_key):
 @click.argument('output_file')
 def transcribe(input_audio, output_file):
     click.echo(f'Transcribing {input_audio} to {output_file}...')
+    input_audio_file = input_audio
+    output_transcript_file = output_file
+
+    audio_processor = AudioProcessor(input_audio_file)
+    transcript = audio_processor.transcribe()
+    print(transcript)
+
+    with open(output_transcript_file, "w") as f:
+        f.write(transcript)
+
+
 
 @click.command()
 @click.argument('input_transcript')
